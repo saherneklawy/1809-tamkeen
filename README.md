@@ -6,4 +6,4 @@
 
 # سلاح التميذ
 
-- [HTML](manual/دليل-html.html)
+- [HTML](http://saher.io/1809-tamkeen/manual/%D8%AF%D9%84%D9%8A%D9%84-html.html)
