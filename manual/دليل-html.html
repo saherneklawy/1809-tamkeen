@@ -10,16 +10,17 @@
         border-collapse: collapse;
         width: 100%;
       }
-      table, th, td {
+      td {
         border: 1px solid black;
       }
-      th {
+      .th {
         background-color: black;
         color: white;
         font-size: 18px;
         font-weight: bolder;
+        text-align: center;
       }
-      th, td {
+      .th, td {
         padding: 1em;
       }
     </style>
@@ -27,12 +28,11 @@
   <body>
     <h1>دليل عناصر HTML</h1>
     <table>
-      <thead>
-        <tr>
-          <th>العنصر</th>
-          <th>الوصف</th>
-      </thead>
-      <tbody>
+      
+        <tr class='thead'>
+          <td class='th'>العنصر</td>
+          <td class='th'>الوصف</td>
+        </tr>
         <tr>
           <td>&lt;html&gt; ... &lt;/html&gt;</td>
           <td>بداية الملف</td>
@@ -107,7 +107,6 @@
           &lt;/table&gt;</td>
           <td>جدول</td>
         </tr>
-      </tbody>
     </table>
   </body>
 </html>
