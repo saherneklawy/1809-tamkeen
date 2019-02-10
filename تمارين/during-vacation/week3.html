@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <script src='jquery-3.3.1.min.js'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDMkSvahWp2ES_d8M4jU2wUZCyx5be6PtM",
+            authDomain: "todo-654fc.firebaseapp.com",
+            databaseURL: "https://todo-654fc.firebaseio.com",
+            projectId: "todo-654fc",
+            storageBucket: "todo-654fc.appspot.com",
+            messagingSenderId: "542806317470"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Roboto" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            direction: rtl;
+            padding: 20px;
+            background-color: #e9ebee;
+        }
+
+        .in, .btn {
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        #add {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #add-btn {
+            color: white;
+            background-color: #4267b2;
+            border: 0px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .friend {
+            margin-bottom: 10px;
+            padding: 10px;
+            padding-right: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        #db-friends {
+            margin-top: 20px;
+            width: 200px;
+        }
+
+        #friends-container {
+            border-radius: 5px;
+            border: 1px solid #dddfe2;
+            background: white;
+            padding: 0px 20px;
+            width: 350px;
+        }
+
+        #container {
+            display: flex;
+        }
+
+        #stories-container {
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            margin: 0px 10px;
+
+            border-radius: 5px;
+            border: 1px solid #dddfe2;
+            background: white;
+            padding: 0px 20px;
+        }
+        
+        .profile_img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 10px;
+            padding: 2px;
+            border: 2px solid #3578e5;
+        }
+
+        .prf_img {
+
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id='container'>
+
+        <div id='friends-container'>
+            <h2>
+                الأصدقاء
+            </h2>
+            <div id='add'>
+                <input class='in' id='name' type='text' placeholder="الإسم">
+                <input class='in' id='img_in' type='text' placeholder="الصورة">
+                <button class='btn' id='add-btn'>إضافة</button>
+            </div>
+            <div id='friends'>
+                <div id='db-friends'></div>
+            </div>
+        </div>
+
+        <div id='stories-container'>
+            <h2>مشاركات</h2>
+        </div>
+
+    </div>
+</body>
+<script>
+    function handleClick() {
+        var bo2loz = $('#name').val();
+        var lnk = $('#img_in').val();
+        if (bo2loz != '') {
+            var db = firebase.firestore();
+            var object = { name: bo2loz, img: lnk };
+            db.collection("friends").add(object);
+
+        }
+    }
+    $('#add-btn').click(handleClick);
+
+    var db = firebase.firestore();
+    db.collection("friends").onSnapshot(handleDataRead);
+    function handleDataRead(objects) {
+        var z = $('#db-friends');
+        z.html('');
+
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+
+            var template = '<div class="friend">'+
+                '<div class="profile_img">'+
+                '<img class="prf_img" src="'+data.img+'"></img>'+
+                '</div>'+data.name
+            +'</div>';
+
+            var template = '<div class="friend">'+
+                '<div class="profile_img">'+
+                    '<img class="prf_img" src='+data.img+'></img>'+
+                '</div>'+
+                data.name
+            '</div>'
+
+            z.append(template);
+
+            i = i + 1;
+        }
+    }
+</script>
+
+</html>

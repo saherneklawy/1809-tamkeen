@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <script src='jquery-3.3.1.min.js'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDMkSvahWp2ES_d8M4jU2wUZCyx5be6PtM",
+            authDomain: "todo-654fc.firebaseapp.com",
+            databaseURL: "https://todo-654fc.firebaseio.com",
+            projectId: "todo-654fc",
+            storageBucket: "todo-654fc.appspot.com",
+            messagingSenderId: "542806317470"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Roboto" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            direction: rtl;
+            padding: 20px;
+        }
+
+        .in, .btn {
+            padding: 5px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        الأصدقاء
+    </h1>
+    <div id='add'>
+        <input class='in' id='name' type='text' placeholder="الإسم">
+        <button class='btn' id='add-btn'>إضافة</button>
+    </div>
+    <div id='friends'>
+        <ol id='db-friends'></ol>
+    </div>
+
+</body>
+<script>
+    function handleClick() {
+        var bo2loz = $('#name').val();
+        if (bo2loz != '') {
+            var db = firebase.firestore();
+            var object = { name: bo2loz };
+            db.collection("friends").add(object);
+
+        }
+    }
+    $('#add-btn').click(handleClick);
+
+    var db = firebase.firestore();
+    db.collection("friends").onSnapshot(handleDataRead);
+    function handleDataRead(objects) {
+        var z = $('#db-friends');
+        z.html('');
+
+        var n = objects.size;
+        var i = 0;
+        while (i < n) {
+            var id = objects.docs[i].id;
+            var data = objects.docs[i].data();
+
+            var template = '<li>'+data.name+'</li>';
+            z.append(template);
+
+            i = i + 1;
+        }
+    }
+</script>
+
+</html>
