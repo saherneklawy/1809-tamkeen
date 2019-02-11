@@ -14,7 +14,7 @@
 # سلاح التلميذ
 
 1. [HTML](http://saher.io/1809-tamkeen/manual/%D8%AF%D9%84%D9%8A%D9%84-html.html)
-2. [CSS](http://saher.io/1809-tamkeen/manual/CSS%20Cheat%20Sheet.pdf)
-2. [Jquery](http://saher.io/1809-tamkeen/manual/javascript.pdf)
-2. [Firebase](http://saher.io/1809-tamkeen/manual/%D9%82%D9%88%D8%A7%D8%B9%D8%AF%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%20%D9%85%D8%B9%20Firebase.pdf)
-
+1. [CSS](http://saher.io/1809-tamkeen/manual/CSS%20Cheat%20Sheet.pdf)
+1. [Jquery](http://saher.io/1809-tamkeen/manual/javascript.pdf)
+1. [Firebase](http://saher.io/1809-tamkeen/manual/%D9%82%D9%88%D8%A7%D8%B9%D8%AF%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%20%D9%85%D8%B9%20Firebase.pdf)
+1. [PhoneGap 1](https://www.youtube.com/watch?v=PT_9fV16y98&list=PLfn-J4Tk3tbIZ5d0odsX62yHjz8b8ayur)
