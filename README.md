@@ -9,6 +9,7 @@
 1. [JQuery 2](https://www.youtube.com/watch?v=HgP83Aoa__4&list=PLfn-J4Tk3tbKQOVwZw_F4cmW01P1hDwRw)
 1. [Firebase](https://www.youtube.com/watch?v=ZAimFbEOnuw&list=PLfn-J4Tk3tbKVhjQFJEvdG9dcb26-aHjM)
 1. [PhoneGap 1](https://www.youtube.com/watch?v=PT_9fV16y98&list=PLfn-J4Tk3tbIZ5d0odsX62yHjz8b8ayur)
+1. [تحميل صور](https://www.youtube.com/watch?v=9n-FnaosXII&list=PLfn-J4Tk3tbLw9pdZ-KO4ywpVBrowuBxY)
 
 
 # سلاح التلميذ
@@ -18,3 +19,4 @@
 1. [Jquery](http://saher.io/1809-tamkeen/manual/javascript.pdf)
 1. [Firebase](http://saher.io/1809-tamkeen/manual/%D9%82%D9%88%D8%A7%D8%B9%D8%AF%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%20%D9%85%D8%B9%20Firebase.pdf)
 1. [PhoneGap 1](https://www.youtube.com/watch?v=PT_9fV16y98&list=PLfn-J4Tk3tbIZ5d0odsX62yHjz8b8ayur)
+1. [تحميل صور](https://www.youtube.com/watch?v=9n-FnaosXII&list=PLfn-J4Tk3tbLw9pdZ-KO4ywpVBrowuBxY)
